@@ -1,10 +1,10 @@
-# Projeto de estudo para Websockets, Typescript
+# Projeto de estudo para Websockets, NodeJS 20
 
 ## Estruntura
 
 ## Inspiração
 
-Veio a partir de uma live do @maykbrito onde o proprio estava tentando aprender websockets na "marra", nao assiti toda live pois estava trabalhando.
+Veio a partir de uma live do @maykbrito onde o proprio estava tentando aprender websockets na "marra", nao assisti toda live pois estava trabalhando.
 
 ## Anotações
 
@@ -28,40 +28,4 @@ Especificado, nome do projeto, descrição e autor, na propriedade ```main``` do
 ```ts
 import { inspect } from "utils";
 export 
-```
-
-- instalado typescript como ferramenta de desenvolvimento
-
-```terminhal
-npm i typescript -D
-```
-
-Optei por usar typescript pela tipagem forte que a ferramenta disponibiliza. Algumas customizações foram feitas no ```tsconfig.json```.
-
-```json
-{
-  "include": ["src/**/*", "node_modules"], // Definido quais arquivos typescript serão compilados para javascript. 
-  "exclude": ["**/*.spec.ts"], // Definido quais arquivos typescript NÃO serão compilados para javascript. 
-  "compilerOptions": {
-    "rootDir": "./", // Determina o diretório(raíz) inicial do projeto. 
-    "outDir": "./dist", // Determina o diretório onde seram salvos os arquivos javascript que foram compilados apartir dos arquivos typescripts.
-    "module": "ES6", // Optei por usar uma mais recente.
-  }
-}
-```
-
-- Instalando compilador automático
-
-Não há muitas opções aqui, instalei o ```ts-node-dev```(<https://github.com/wclr/ts-node-dev>) como dependência de desenvolvimento, essa ferramenta serve para compilar (_gerar codigo javascript apartir dos arquivos typescript_) rodar a aplicação e monitorar alterações para repetir o processo e reiniciar a aplicação.
-
-```terminal
-npm i ts-node-dev --save-dev
-```
-
-Agora precisamos definir alguns **scripts** no ```package.json``` da aplicação.
-
-```json
-"scripts": {
-    "dev": "tsnd --respawn --transpile-only src/app.ts"
-  },
 ```

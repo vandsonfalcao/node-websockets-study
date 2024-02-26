@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Scket Client</title>
+</head>
+
+<body>
+  <output id="messages"></output>
+  <div>
+    <a href="javascript:webSocketInit()">Run WebSocket</a>
+  </div>
+  <script type="text/javascript">
+    function webSocketInit() {
+      if ("WebSocket" in window) {
+        alert("WebSocket is supported by your Browser!");
+        const messages = document.getElementById("messages")
+        const socket = new WebSocket(`ws://localhost:3334`)
+        socket.onopen = (event) => console.info(`CLIENT: WebSocket is connected!`)
+        socket.onmessage = (msg) => console.log(`CLIENT: I got a message!`, msg)
+        socket.onerror = (error) => console.error(`CLIENT: Web Socket error`, error)
+        socket.onclose = (event) => console.info(`CLIENT: Disconnected from WebSocket server.`)
+      } else {
+        // The browser doesn't support WebSocket
+        alert("WebSocket NOT supported by your Browser!");
+      }
+    }
+  </script>
+</body>
+
+</html>
