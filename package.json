@@ -1,0 +1,13 @@
+{
+  "name": "websockets",
+  "version": "1.0.0",
+  "description": "Study websockets with NodeJS 20",
+  "main": "src/server.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --watch --no-warnings ./src/server.mjs"
+  },
+  "keywords": [],
+  "author": "Vandson Falcão",
+  "license": "MIT"
+}
